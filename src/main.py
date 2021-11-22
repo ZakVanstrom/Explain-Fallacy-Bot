@@ -36,5 +36,18 @@ app_list = {
                                                explain_fallacy.start_handling),
 }
 
-for n in app_list:
-    check_new_call(n)
+
+def lambda_handler(event, context):
+    for n in app_list:
+        check_new_call(n)
+
+    response = {
+        'headers': {
+            "Content-Type": "application/json"
+        },
+        'statusCode': 200,
+        'body': None,
+        'isBase64Encoded': False
+    }
+
+    return response

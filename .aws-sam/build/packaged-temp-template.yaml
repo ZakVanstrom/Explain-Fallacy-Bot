@@ -1,0 +1,11 @@
+Resources:
+  Function:
+    Type: AWS::Serverless::Function
+    Properties:
+      Timeout: 300
+      MemorySize: 128
+      PackageType: Image
+      ImageUri: 443047227392.dkr.ecr.us-east-1.amazonaws.com/cdk-hnb659fds-container-assets-443047227392-us-east-1:function-9a65dc095b40-latest
+    Metadata:
+      DockerContext: /Users/zak/Dev/Explain-Fallacy-Bot
+      Dockerfile: Dockerfile
