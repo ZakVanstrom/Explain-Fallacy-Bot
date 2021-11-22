@@ -55,8 +55,11 @@ class ExplainFallacy:
         self.respond_to_message()
 
     def build_response(self):
-        self.response += "Redditor /u/" + self.msg.author.name + " thinks you committed the [Logical Fallacy]("
-        self.response += "https://en.wikipedia.org/wiki/Fallacy) of " + self.info['wikipedia']
+        self.response += "/u/" + self.msg.author.name + " thinks you committed the [Logical Fallacy]("
+        self.response += "https://en.wikipedia.org/wiki/Fallacy) of " + self.info['wikipedia'] + "\n\n"
+        self.response += "**" + self.info['title'] + "** \n\n"
+        self.response += self.info['summary'] + "\n\n"
+        self.response += "^(\[ Fallacy List |) [^(GitHub)](https://github.com/ZakVanstrom/Explain-Fallacy-Bot) ^(| v0.0.0 | Want a Fallacy added?)  [^(Contact Me)](mailto:zvanstro@asu.edu) ^(\])"
 
     def respond_to_message(self):
         self.msg.parent().reply(self.response)
